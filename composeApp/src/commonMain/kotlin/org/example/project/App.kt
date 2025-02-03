@@ -21,6 +21,9 @@ import kmpfirstproject.composeapp.generated.resources.compose_multiplatform
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.example.project.Navigation.MyApp
+import org.example.project.Presentation.Screens.WeatherScreen
+import org.example.project.Presentation.WeatherViewModel
+import org.example.project.Repository.Repository
 import org.example.project.data.ApiService.ApiService
 
 @Composable
@@ -28,15 +31,9 @@ import org.example.project.data.ApiService.ApiService
 fun App() {
     MaterialTheme {
       // MyApp()
-        val apiservice=ApiService()
-        val data = remember {  mutableStateOf("")}
-        GlobalScope.launch {
-            println("HIIIII")
-          println(  apiservice.getWeatherByCity("Jaipur"))
-            data.value=apiservice.getWeatherByCity("City").toString()
 
-        }
-Text("${data.value}")
+        val viewmodel:WeatherViewModel = WeatherViewModel()
+     WeatherScreen(viewmodel)
 
     }
 }

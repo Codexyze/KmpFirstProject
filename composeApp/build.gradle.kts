@@ -60,6 +60,8 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)//android
+            implementation("io.coil-kt:coil-compose:2.5.0")
+
         }
         commonMain.dependencies {
            val ktorVersion="3.0.3"
@@ -77,11 +79,13 @@ kotlin {
             implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
             implementation("io.ktor:ktor-client-serialization:$ktorVersion")
             implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+            implementation("io.github.qdsfdhvh:image-loader:1.5.3")
 
 
         }
         iosMain.dependencies {// for ios darwin dependency
             implementation(libs.ktor.client.darwin)
+            implementation("io.github.qdsfdhvh:image-loader:1.5.3")
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
