@@ -90,8 +90,8 @@ fun WeatherDetails(weather: WeatherResponse) {
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            Text("Temperature: ${weather.main?.temp}°C", fontSize = 20.sp)
-            Text("Feels like: ${weather.main?.feels_like}°C", fontSize = 16.sp)
+            Text("Temperature: ${weather.main?.temp?.toInt()?.minus(273.15)?.toFloat()}°C", fontSize = 20.sp)
+            Text("Feels like: ${weather.main?.feels_like?.toInt()?.minus(273.15)?.toFloat()}°C", fontSize = 16.sp)
             Text("Humidity: ${weather.main?.humidity}%", fontSize = 16.sp)
             Text("Wind Speed: ${weather.wind?.speed} m/s", fontSize = 16.sp)
         }
