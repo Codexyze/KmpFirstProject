@@ -20,7 +20,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.seiko.imageloader.rememberAsyncImagePainter
+//import com.seiko.imageloader.rememberAsyncImagePainter
 
 import org.example.project.Presentation.Result
 
@@ -79,12 +79,12 @@ fun WeatherDetails(weather: WeatherResponse) {
         ) {
             Text(weather.name ?: "Unknown City", fontSize = 28.sp, fontWeight = FontWeight.Bold)
 
-            Image(
-                painter = rememberAsyncImagePainter(iconUrl),
-                contentDescription = "Weather Icon",
-                modifier = Modifier.size(100.dp),
-                contentScale = ContentScale.Fit
-            )
+//            Image(
+//                painter = rememberAsyncImagePainter(iconUrl),
+//                contentDescription = "Weather Icon",
+//                modifier = Modifier.size(100.dp),
+//                contentScale = ContentScale.Fit
+//            )
 
             Text(weather.weather.firstOrNull()?.description?.capitalize() ?: "", fontSize = 20.sp, color = Color.Gray)
 

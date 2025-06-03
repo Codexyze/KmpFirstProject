@@ -1,3 +1,4 @@
+import org.gradle.kotlin.dsl.implementation
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
@@ -61,12 +62,15 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)//android
             implementation("io.coil-kt:coil-compose:2.5.0")
+            implementation("io.ktor:ktor-client-okhttp:3.0.3")
 
         }
         commonMain.dependencies {
            val ktorVersion="3.0.3"
             implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
             implementation("org.jetbrains.androidx.navigation:navigation-compose:2.8.0-alpha10")
+            implementation("io.ktor:ktor-client-cio:3.0.3")
+
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -79,13 +83,14 @@ kotlin {
             implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
             implementation("io.ktor:ktor-client-serialization:$ktorVersion")
             implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-            implementation("io.github.qdsfdhvh:image-loader:1.5.3")
+           // implementation("io.github.qdsfdhvh:image-loader:1.5.3")
 
 
         }
         iosMain.dependencies {// for ios darwin dependency
             implementation(libs.ktor.client.darwin)
             implementation("io.github.qdsfdhvh:image-loader:1.5.3")
+
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
