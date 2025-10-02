@@ -84,6 +84,9 @@ kotlin {
             implementation("io.ktor:ktor-client-serialization:$ktorVersion")
             implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
            // implementation("io.github.qdsfdhvh:image-loader:1.5.3")
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
 
 
         }

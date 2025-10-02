@@ -7,9 +7,7 @@ import kotlinx.coroutines.launch
 import org.example.project.Repository.Repository
 import org.example.project.data.WeatherResponse
 
-class WeatherViewModel : ViewModel() {
-    private val repository = Repository()
-
+class WeatherViewModel (private  val repository: Repository) : ViewModel() {
 
     // Mutable state for UI
     private val _state = mutableStateOf<Result<WeatherResponse>>(Result.Loading)

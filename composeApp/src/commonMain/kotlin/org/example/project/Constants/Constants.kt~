@@ -1,0 +1,6 @@
+package org.example.project.Constants
+
+object Constants {
+    const val BASE_URL="https://api.openweathermap.org/data/2.5/weather?"
+    const  val API_KEY=
+}
