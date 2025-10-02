@@ -25,15 +25,25 @@ import org.example.project.Presentation.Screens.WeatherScreen
 import org.example.project.Presentation.WeatherViewModel
 import org.example.project.Repository.Repository
 import org.example.project.data.ApiService.ApiService
+import org.example.project.di.startKoinApp
+import org.koin.compose.KoinContext
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
 
+@OptIn(KoinExperimentalAPI::class)
 @Composable
 @Preview
 fun App() {
     MaterialTheme {
       // MyApp()
 
-        val viewmodel:WeatherViewModel = WeatherViewModel()
-     WeatherScreen(viewmodel)
+
+            val viewmodel: WeatherViewModel = koinViewModel<WeatherViewModel>()
+            WeatherScreen(viewModel =viewmodel )
+
+
+
+
 
     }
 }

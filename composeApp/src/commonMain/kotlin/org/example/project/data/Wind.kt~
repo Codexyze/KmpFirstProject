@@ -1,0 +1,6 @@
+package org.example.project.data
+
+data class Wind(
+    val deg: Int,
+    val speed: Double
+)

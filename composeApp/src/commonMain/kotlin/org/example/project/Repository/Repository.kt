@@ -7,8 +7,7 @@ import org.example.project.data.ApiService.ApiService
 import org.example.project.data.Weather
 import org.example.project.data.WeatherResponse
 
-class Repository {
-    private val apiService=ApiService()
+class Repository (private val apiService: ApiService) {
    suspend fun getWeatherByCity(city: String): WeatherResponse{
       return apiService.getWeatherByCity(city)
    }
